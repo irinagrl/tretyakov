@@ -154,12 +154,13 @@ function dropdownHandler(evt) {
 
 //inline filter
 function filterInlineHandler(evt) {
+    const selectedCard = evt.target.closest('.filter_inline__cell');
     evt.target.classList.toggle('filtered');
 
     if (evt.target.classList.contains('filtered')) {
-        evt.target.style.backgroundColor = '#b7976e';
+        selectedCard.style.backgroundColor = '#b7976e';
     } else {
-        evt.target.style.backgroundColor = '#e4dcd5';
+        selectedCard.style.backgroundColor = '#e4dcd5';
     }
 
     render(paintings);
@@ -197,7 +198,7 @@ function submitPopup(evt) {
     document.querySelector('.popup').style.display = 'none';
 }
 
-document.querySelector('.filter_inline').addEventListener('click', filterInlineHandler);
+document.querySelector('.filter_inline__cell').addEventListener('click', filterInlineHandler);
 document.querySelector('.filter_patron').addEventListener('click', patronFilterHandler);
 document.querySelector('.dropdown_container').addEventListener('click', dropdownHandler);
 document.querySelector('.dropdown_cell').addEventListener('click', openDropDownHandler);
