@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Третьяковка</title>
+    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
+    <link rel="stylesheet" href="./pages/style.css">
+    <link rel="icon" type="image/x-icon" href="./images/t_favico_16px.png">
+
+</head>
+
+<body>
+    <div class="root">
+        <header class="header">
+            <div class="header_logo">
+                <img src="./images/my_tretyakov_logo.png" class="header_logo__my-trеtyakov" alt="my tretyakov logo">
+                <img src="./images/mir-logo-white.svg" class="header_logo__mir" alt="mir logo">
+            </div>
+            <div class="header_menu__btn">
+                <!-- <label class="menu-burger menu-burger--light"
+                    data-v-e852faba="" data-cursor-anchor="hidden" data-cursor-anchor-icon=""> -->
+                <p class="btn_line"></p>
+                <p class="btn_line"></p>
+                <p class="btn_line"></p>
+            </div>
+            <div class="header_user">
+                <img src="./images/user_icon.png" alt="user icon" class="header_user__icon">
+                <!-- <div class="header_user__icon">
+                </div> -->
+                <span class="header_user__text">войти</span>
+
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="">
+                <div class="options">
+                    <div class="filter">параметры</div>
+                    <div class="search">поиск</div>
+                </div>
+
+                <div class="filter_params">
+                    <div class="filter_dropdown">
+                        <div class="dropdown_cell"> <span class="dropdown_cell__title">автор</span><span
+                                class="dropdown_btn"></span></div>
+                        <div class="dropdown_container">
+                            <a href="#" class="dropdown_item">Все</a>
+                        </div>
+
+
+                    </div>
+                    <div class="filter_patron">
+                        <div class="patron_switch">
+                            <div class="patron_switch__circle"></div>
+                        </div>
+                        <span class="patron_text">можно стать патроном</span>
+                    </div>
+
+                    <div class="filter_inline">
+                        <div class="filter_inline__cell">портрет</div>
+                    </div>
+
+                </div>
+                <div class="search__params">поиск опции</div>
+            </section>
+
+            <section class="gallery"> </section>
+
+            <section class="popup">
+                <div class="popup__content">
+                    <img src="./images/close.svg" alt="" class="popup__close">
+                    <h3 class="popup__title">исправить данные</h3>
+                    <form class="popup__form" name="params">
+                        <input id="popup_author" type="text" name="author" class="popup__input popup__input_author"
+                            placeholder="Автор" value="Автор">
+                        <input id="popup_title" type="text" name="title" class="popup__input popup__input_title"
+                            placeholder="Название" value="Название">
+                        <button type="submit" class="popup__button">+</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>вопросы:</p>
+            <p>как убрать глобальную переменную</p>
+            <!-- <p>почему ошибки в paintings.js</p> -->
+            <!-- <p>как обновлять картинку после попап, а не добавлять новую?</p> -->
+            <!-- <p>как помещать измененные данные в массив?</p> -->
+
+            сделать:
+            <p>loader</p>
+            убрать filters из массива
+            <p>фильтр списком ul li</p>
+            <p>фильтр mouseon</p>
+            <p>проверить под админом и юзером</p>
+            <!-- <p>authorfilter all</p> -->
+            <p>BEM correct</p>
+
+        </footer>
+    </div>
+
+    <template id="dropdown_item__template">
+        <a href="#" class="dropdown_item dropdown_item__author">${painting.author}</a>
+    </template>
+
+    <template id="card__template">
+        <div class="card">
+            <div class="card__block">
+                <img class="card__image" src="${painting.src}" alt="${painting.title}">
+                <a src="" class="card__settings">
+                    <img src="/images/settings.png" alt="настройки" class="settings__image">
+                </a>
+                <p class="card__index">${painting.id}</p>
+                <p class="card__title">${painting.title}</p>
+                <div class="card__line"></div>
+                <p class="card__author">${painting.author}</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- <template id="popup__template">
+        <div class="popup__content">
+            <img src="./images/close.svg" alt="" class="popup__close">
+            <h3 class="popup__title">исправить данные</h3>
+            <form class="popup__form" name="params_change">
+                <input id="popup_author" type="text" name="author" class="popup__input popup_input__author"
+                    placeholder="Автор">
+                <input id="popup_title" type="text" name="title" class="popup__input popup__input_title"
+                    placeholder="Название">
+                <button type class="button popup__button">+</button>
+            </form>
+        </div>
+    </template> -->
+
+
+    <script src="./pages/paintings.js"></script>
+    <script src="./pages/main.js"></script>
+
+</body>
+
+</html>
