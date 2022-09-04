@@ -174,12 +174,11 @@ body {
     flex-direction: column;
     position: absolute;
     background-color: #f6f3f0;
-    width: 18%;
+    width: fit-content;
     height: 400px;
     overflow: auto;
     border: 1px solid #000;
     z-index: 2;
-    left: 5px;
     top: 40px;
 }
 
@@ -398,7 +397,6 @@ body {
 }
 
 
-/* footer styling */
 .footer {
     background-color: #252525;
     width: 100%;
@@ -430,6 +428,42 @@ body {
     .card {
         max-width: 50%;
     }
+
+    .filter_params {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        position: unset;
+        gap: 20px;
+    }
+
+    .filter_dropdown {
+        grid-row: 1;
+        position: unset;
+        margin: auto;
+    }
+
+    .dropdown_cell {
+        margin: auto;
+        width: 80%;
+    }
+
+
+    .filter_patron {
+        grid-row: 3;
+        position: unset;
+        margin: auto;
+        width: fit-content;
+    }
+
+    .filter_inline {
+        grid-row: 2;
+        position: unset;
+        margin: auto;
+        width: fit-content;
+    }
 }
 
 @media (max-width: 600px) {
@@ -447,6 +481,11 @@ body {
 @media (max-width: 450px) {
     .header__frame {
         flex-direction: column;
-        flex-wrap: nowrap;
+        margin-bottom: 75px;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 20px;
     }
 }
