@@ -97,6 +97,8 @@ function createFilterElement(author) {
     return filter;
 }
 
+createAuthorList(paintings);
+
 ///////////////////////////filter cards
 function deleteCards() {
     const gallery = document.querySelector('.gallery');
@@ -126,20 +128,20 @@ function patronFilterHandler() {
 }
 
 // dropdown
-function openDropDownHandler() {
-    createAuthorList(paintings);
-    document.querySelector('.dropdown_cell').classList.add('dropdown_is-open');
+function openDropDownHandler(evt) {
+    evt.stopImmediatePropagation();
     document.querySelector('.dropdown_container').style.display = 'flex';
 }
 
 function closeDropDownHandler(evt) {
-    if (!evt.target.classList.contains('dropdown_cell')) {
+    if (!evt.target.classList.contains('dropdown_container')) {
         document.querySelector('.dropdown_container').style.display = 'none';
     }
-
 }
 
 function dropdownHandler(evt) {
+    evt.preventDefault();
+
     const filter = evt.target.textContent;
 
     if (filter === 'Все') {
@@ -189,7 +191,6 @@ function updateCardText(paintings) {
 
 function closePopupHandler() {
     document.querySelector('.popup').style.display = 'none';
-
 }
 
 function submitPopup(evt) {
@@ -200,9 +201,9 @@ function submitPopup(evt) {
 
 document.querySelector('.filter_inline__cell').addEventListener('click', filterInlineHandler);
 document.querySelector('.filter_patron').addEventListener('click', patronFilterHandler);
-document.querySelector('.dropdown_container').addEventListener('click', dropdownHandler);
 document.querySelector('.dropdown_cell').addEventListener('click', openDropDownHandler);
-document.querySelector('.main').addEventListener('click', closeDropDownHandler);
+document.querySelector('.dropdown_container').addEventListener('click', dropdownHandler);
+document.addEventListener('click', closeDropDownHandler);
 document.querySelector('.gallery').addEventListener('click', openPopupHandler);
 document.querySelector('.popup__close').addEventListener('click', closePopupHandler);
 document.querySelector('.popup__form').addEventListener('submit', submitPopup);
