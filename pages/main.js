@@ -1,5 +1,5 @@
-// const ROLE = 'admin';
-const ROLE = 'user';
+const ROLE = 'admin';
+// const ROLE = 'user';
 let selection;
 
 ///////////////////////////create gallery
